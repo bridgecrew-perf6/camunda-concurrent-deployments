@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    primary:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:postgresql://${DATABASE_ENDPOINT}:5432/${DATABASE_NAME}
+      username: ${DATABASE_USERNAME}
+      password: ${DATABASE_PASSWORD}
+      hikari:
+        poolName: Hikari
+        auto-commit: false
+        keepaliveTime: 300000
+        maximumPoolSize: 5
+        transactionIsolation: TRANSACTION_REPEATABLE_READ
+        type: com.zaxxer.hikari.HikariDataSource
+    camunda:
+      type: com.zaxxer.hikari.HikariDataSource
+      url: jdbc:postgresql://${DATABASE_ENDPOINT}:5432/${DATABASE_NAME}
+      username: ${DATABASE_USERNAME}
+      password: ${DATABASE_PASSWORD}
+      hikari:
+        poolName: Hikari
+        auto-commit: false
+        keepaliveTime: 300000
+        maximumPoolSize: 5
+        transactionIsolation: TRANSACTION_REPEATABLE_READ
+        type: com.zaxxer.hikari.HikariDataSource
+  liquibase:
+    change-log: classpath:db/changelog/db.changelog-master.xml
