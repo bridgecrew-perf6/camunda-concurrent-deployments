@@ -46,12 +46,6 @@ public class DataSourceConfiguration {
                 .build();
     }
 
-//    @Bean
-//    @Primary
-//    public PlatformTransactionManager primaryTransactionManager() {
-//        return new JpaTransactionManager();
-//    }
-
     @Bean(name="camundaBpmTransactionManager")
     public PlatformTransactionManager camundaTransactionManager(@Qualifier("camundaBpmDataSource") DataSource dataSource) {
         return new DataSourceTransactionManager(dataSource);

@@ -6,7 +6,7 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 
-public class FlowDeploymentWorker extends Thread{
+public class FlowDeploymentWorker extends Thread {
     private CyclicBarrier _barrier;
     private CountDownLatch _latch;
     private final RepositoryService _repositoryService;
